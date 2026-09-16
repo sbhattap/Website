@@ -113,3 +113,28 @@
 			}
 		}
 	}
+
+/* Portfolio additions (mirrors assets/css/main.css). */
+
+	#intro .pronounce {
+		color: rgba(255, 255, 255, 0.65);
+		font-family: _font(family);
+		font-style: italic;
+		font-weight: 700;
+		font-size: 0.8rem;
+		letter-spacing: 0.1rem;
+		margin: -0.75rem 0 1rem 0 !important;
+	}
+
+	.open-to-work {
+		display: inline-block;
+		background-color: #ffcf73;
+		color: #16191f;
+		font-family: _font(family);
+		font-style: italic;
+		font-weight: 700;
+		font-size: 0.8rem;
+		padding: 0.5rem 1.25rem;
+		border-radius: 2rem;
+		margin: 0 0 1.5rem 0 !important;
+	}

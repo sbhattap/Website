@@ -156,3 +156,41 @@
 			width: 100%;
 		}
 	}
+
+/* Portfolio additions (mirrors assets/css/main.css).
+   Cotton-candy / orange / yellow sunset palette.
+   #header and #copyright are left transparent so the hero photo shows through. */
+
+	.tech {
+		color: #16191f;
+		font-family: _font(family);
+		font-style: italic;
+		font-weight: 700;
+		font-size: 0.95rem;
+		letter-spacing: 0;
+		text-transform: none;
+		margin: -0.5rem 0 1.25rem 0 !important;
+	}
+
+		.posts .tech {
+			font-size: 0.85rem;
+		}
+
+	#main {
+		background-image: linear-gradient(180deg, #ffeef4 0%, #fff6e8 18%, #ffffff 50%, #fff4e0 82%, #ffe9c9 100%);
+	}
+
+	#footer {
+		background-image: linear-gradient(180deg, #ffe9c9 0%, #ffd9b0 60%, #ffc9a6 100%);
+	}
+
+		#main > .posts > article,
+		#main > article {
+			border-top: 0.25rem solid #fcb1c5;
+		}
+
+		#main > article:nth-of-type(2n) { border-top-color: #ff9061; }
+		#main > article:nth-of-type(3n) { border-top-color: #ffcf73; }
+		#main > .posts > article:nth-child(2n) { border-top-color: #ff9061; }
+		#main > .posts > article:nth-child(3n) { border-top-color: #ffcf73; }
+		#main > .posts > article:nth-child(4n) { border-top-color: #ffb0a8; }

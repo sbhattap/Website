@@ -1,0 +1,9 @@
+# Local design reference, not part of the site. Must never reach gh-pages.
+matt.html
+
+# Claude Code local settings
+.claude/settings.local.json
+
+# Project notes for Claude Code. gh-pages is the live site, so anything
+# committed here is served publicly; keep these notes local.
+CLAUDE.md

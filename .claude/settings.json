@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "permissions": {
+    "allow": [
+      "Read",
+      "Glob",
+      "Grep",
+
+      "Bash(git status*)",
+      "Bash(git log*)",
+      "Bash(git diff*)",
+      "Bash(git show*)",
+      "Bash(git branch*)",
+      "Bash(git ls-tree*)",
+      "Bash(git ls-files*)",
+      "Bash(git ls-remote*)",
+      "Bash(git rev-parse*)",
+      "Bash(git remote -v*)",
+      "Bash(git fetch*)",
+      "Bash(git switch*)",
+      "Bash(git checkout -b*)",
+      "Bash(git stash list*)",
+
+      "Bash(npm ci*)",
+      "Bash(npm install*)",
+      "Bash(npm run build*)",
+      "Bash(npm run dev*)",
+      "Bash(npm run lint*)",
+      "Bash(npm run export*)",
+      "Bash(npm run start*)",
+      "Bash(npm test*)",
+      "Bash(npx next*)",
+      "Bash(node *)",
+
+      "Bash(ls*)",
+      "Bash(cat *)",
+      "Bash(head *)",
+      "Bash(tail *)",
+      "Bash(find *)",
+      "Bash(grep *)",
+      "Bash(wc *)",
+      "Bash(file *)",
+      "Bash(du *)",
+      "Bash(pwd)",
+      "Bash(mkdir *)",
+      "Bash(cp *)",
+      "Bash(mv *)"
+    ],
+    "ask": [
+      "Bash(git push*)",
+      "Bash(git commit*)",
+      "Bash(git merge*)",
+      "Bash(git rebase*)",
+      "Bash(git reset*)",
+      "Bash(git revert*)",
+      "Bash(git tag*)",
+      "Bash(gh *)",
+      "Bash(vercel*)",
+      "Bash(netlify*)",
+      "Bash(wrangler*)",
+      "Bash(npm publish*)",
+      "Edit(//c/Projects/website/CNAME)",
+      "Edit(//c/Projects/website/public/CNAME)",
+      "Edit(//c/Projects/website/.github/workflows/**)"
+    ],
+    "deny": [
+      "Bash(git push --force*)",
+      "Bash(git push -f*)",
+      "Bash(git branch -D*)",
+      "Bash(git push origin --delete*)",
+      "Bash(git clean -fdx*)",
+      "Bash(rm -rf *)"
+    ]
+  }
+}
