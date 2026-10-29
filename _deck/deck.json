@@ -1,0 +1,20 @@
+{
+  "v": 4,
+  "createdOnFiles": {"v": 1, "at": "2026-10-29T07:46:20Z"},
+  "lists": "css",
+  "title": "Subarna Bhattacharya — Portfolio",
+  "order": ["cover", "about", "sparcs", "pipeline", "decisions", "code", "results", "next", "emrqa", "diagnose", "outcome", "music", "agent", "experience", "close"],
+  "sections": {
+    "intro": {"description": "Who I am and what this deck covers.", "start": "cover"},
+    "p1": {"description": "Project 1: risk-adjusted sepsis mortality benchmarking across New York hospitals.", "start": "sparcs"},
+    "p2": {"description": "Project 2: whether clinical QA models read the chart or exploit dataset artifacts.", "start": "emrqa"},
+    "p3": {"description": "Project 3: an agentic recommender whose final ranking stays deterministic.", "start": "music"},
+    "exp": {"description": "Work experience and a thank-you.", "start": "experience"}
+  },
+  "faces": {
+    "source-serif-4": {"family": "Source Serif 4", "href": "https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400..700&display=swap"},
+    "dm-sans": {"family": "DM Sans", "href": "https://fonts.googleapis.com/css2?family=DM+Sans:wght@400..700&display=swap"},
+    "ibm-plex-mono": {"family": "IBM Plex Mono", "href": "https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap"}
+  },
+  "designSystems": []
+}

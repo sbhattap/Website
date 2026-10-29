@@ -1,0 +1,29 @@
+<section id="results" data-transition="fade" style="background:#f7f6f0;color:#263e35;font-family:'DM Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:48px">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;letter-spacing:2px;text-transform:uppercase;color:#b4441f">Project 1 · Results</p>
+<h2 style="font-family:'Source Serif 4', Georgia, serif;font-size:72px;font-weight:500;line-height:1.1">The ranking holds. Most of the flags don’t.</h2>
+<div style="display:flex;gap:24px">
+<div style="flex:1;display:flex;flex-direction:column;gap:12px;background:#fbfaf6;border:1px solid #dedfd4;border-radius:16px;padding:28px">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:72px;font-weight:500">0.99</p>
+<h3 style="font-size:32px;font-weight:600">Calibration slope</h3>
+<p style="font-size:24px;line-height:1.35;color:#5f6c59">AUROC 0.81. LightGBM, EBM and interactions land within 0.001, so the simple model stays.</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:12px;background:#fbfaf6;border:1px solid #dedfd4;border-radius:16px;padding:28px">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:72px;font-weight:500">4.9</p>
+<h3 style="font-size:32px;font-weight:600">Overdispersion</h3>
+<p style="font-size:24px;line-height:1.35;color:#5f6c59">Hospitals vary far more than chance allows, so plain Poisson limits over-flag.</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:12px;background:#fbfaf6;border:1px solid #dedfd4;border-radius:16px;padding:28px">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:72px;font-weight:500">46 → 9</p>
+<h3 style="font-size:32px;font-weight:600">Robust flags</h3>
+<p style="font-size:24px;line-height:1.35;color:#5f6c59">7 high and 2 low hold under both outcomes and both risk-factor sets.</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:12px;background:#fbfaf6;border:1px solid #dedfd4;border-radius:16px;padding:28px">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:72px;font-weight:500">1.02</p>
+<h3 style="font-size:32px;font-weight:600">Black patients</h3>
+<p style="font-size:24px;line-height:1.35;color:#5f6c59">O/E within the same hospital, vs 1.12 overall. The gap is where they’re treated, not the model.</p>
+</div>
+</div>
+<p style="font-size:32px;line-height:1.45;color:#263e35;width:1500px;border-left:4px solid #df5835;padding:8px 0 8px 28px">Hospital order barely moves across method variants (rank correlation 0.80 to 0.99), but how many hospitals stand out depends heavily on the method.</p>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;color:#66715f">07</p>
+<aside>Flag counts of 180 hospitals: Poisson 99.8%: 46. Overdispersion-adjusted 95%: 29. Adjusted 95% and flagged under all four variants: 9. Adjusted 99.8% under all four: 2. Black patients: odds ratio vs White 1.22 ignoring hospital, 1.02 (0.96 to 1.09) within hospital. These are signals worth a closer look, not verdicts on quality of care.</aside>
+</section>

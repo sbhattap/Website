@@ -1,0 +1,14 @@
+<section id="emrqa" data-transition="fade" style="background:#263e35;color:#f7f6f0;font-family:'DM Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:48px">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;letter-spacing:2px;text-transform:uppercase;color:#e5ac87">Project 2 · emrQA-msquad · clinical question answering</p>
+<h2 style="font-family:'Source Serif 4', Georgia, serif;font-size:72px;font-weight:500;line-height:1.1;width:1500px">Is the model reading the chart, or the dataset’s habits?</h2>
+<p style="font-size:32px;line-height:1.45;color:#c9d2c4;width:1400px">emrQA is built from question templates over real discharge notes, so a model can score well by learning the templates. I fine-tuned ELECTRA-small and took both the model and the data apart.</p>
+<div style="flex:1"></div>
+<table style="width:1100px;font-size:32px;color:#f7f6f0">
+<tr><th style="width:50%;text-align:left">Input the model sees</th><th style="width:25%;text-align:right">Exact match</th><th style="width:25%;text-align:right">F1</th></tr>
+<tr><td>Question + passage</td><td style="text-align:right">90.25</td><td style="text-align:right">92.65</td></tr>
+<tr><td>Passage only</td><td style="text-align:right">8.59</td><td style="text-align:right">18.26</td></tr>
+<tr><td>Question only</td><td style="text-align:right">0.05</td><td style="text-align:right">1.20</td></tr>
+</table>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;color:#acb5a8">09 · <a href="https://app.notion.com/p/Are-QA-Models-Reasoning-or-Exploiting-Artifacts-An-Analysis-of-the-emrQA-msquad-Dataset-3d38cec51dc780cfaa44dc0407ad8cd4">Read the paper</a> · Neither input alone gets far</p>
+<aside>Ablations follow Kaushik and Lipton (2018). Question-only: context masked from attention, or shuffled filler. Passage-only: the question replaced by “Find the answer in the passage”. Three seeds per configuration.</aside>
+</section>

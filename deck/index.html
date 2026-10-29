@@ -1,0 +1,460 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Subarna Bhattacharya · Portfolio</title>
+<meta name="description" content="Three data science projects: sepsis mortality benchmarking, clinical QA dataset artifacts, and an agentic recommender.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400..700&family=DM+Sans:wght@400..700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { height: 100%; background: #1d3129; overflow: hidden; }
+#stage { position: absolute; width: 1920px; height: 1080px; left: 50%; top: 50%; transform-origin: center; }
+section { position: absolute; inset: 0; width: 1920px; height: 1080px; overflow: hidden;
+  display: flex; flex-direction: column; font-size: 32px; line-height: 1.4; }
+/* Slides set display inline, so hiding needs !important */
+body:not(.stack) section:not(.on) { display: none !important; }
+/* In the slide format a div with no display is a column; display:flex is a row */
+section div:not([style*="display"]) { display: flex; flex-direction: column; }
+section aside { display: none; }
+h1, h2, h3 { font-weight: 600; }
+ul, ol { padding-left: 1.2em; }
+li + li { margin-top: 6px; }
+a { color: inherit; text-underline-offset: 4px; }
+table { border-collapse: collapse; }
+th, td { padding: 0.35em 0.6em; border-bottom: 1px solid currentColor; border-color: rgba(128,128,128,0.35); vertical-align: top; }
+th { font-weight: 600; }
+img { display: block; }
+#nav { position: fixed; right: 16px; bottom: 12px; font: 14px 'IBM Plex Mono', monospace;
+  color: #acb5a8; display: flex; gap: 12px; align-items: center; z-index: 2; }
+#nav button { background: #263e35; border: 1px solid #66715f; color: #f7f6f0; border-radius: 6px;
+  width: 36px; height: 30px; font: inherit; cursor: pointer; }
+#nav a { color: #acb5a8; }
+/* Phones: show every slide in one scrolling column */
+body.stack { overflow-y: auto; overflow-x: hidden; }
+body.stack #stage { position: static; transform: none; width: auto; height: auto; }
+body.stack .wrap { position: relative; overflow: hidden; margin: 0 auto 8px; }
+body.stack section { transform-origin: top left; }
+body.stack #nav { display: none; }
+</style>
+</head>
+<body>
+<div id="stage">
+<section id="cover" data-transition="fade" style="display:flex; flex-direction:column; gap:48px; justify-content:center; padding:128px 128px 160px; background:#fbfaf6">
+  <p style="font-family:'IBM Plex Mono', 'Courier New', monospace; font-size:24px; letter-spacing:2px; text-transform:uppercase; color:#b4441f">Portfolio</p>
+  <h1 style="width:1500px; font-family:'Source Serif 4', Georgia, serif; font-size:120px; font-weight:500; line-height:1.05; color:#263e35">Health care data science that holds up to scrutiny.</h1>
+  <p style="width:1400px; font-family:'DM Sans', Arial, sans-serif; font-size:44px; line-height:1.3; color:#5f6c59">Three projects on clinical data and applied AI, and the decisions behind them.</p>
+  <div style="display:flex; flex-direction:row; gap:16px">
+    <p style="padding:12px 24px; font-family:'IBM Plex Mono', 'Courier New', monospace; font-size:24px; color:#263e35; background:#e9eddf; border-radius:256px">Sepsis mortality benchmarking</p>
+    <p style="padding:12px 24px; font-family:'IBM Plex Mono', 'Courier New', monospace; font-size:24px; color:#263e35; background:#e9eddf; border-radius:256px">Clinical QA on medical records</p>
+    <p style="padding:12px 24px; font-family:'IBM Plex Mono', 'Courier New', monospace; font-size:24px; color:#263e35; background:#e9eddf; border-radius:256px">Agentic recommender</p>
+  </div>
+  <p style="position:absolute; bottom:64px; left:128px; width:1664px; font-family:'IBM Plex Mono', 'Courier New', monospace; font-size:24px; color:#66715f">Subarna Bhattacharya · MS Data Science, UT Austin · sbhatta.org</p>
+  <aside>Three projects. The first is the same kind of risk-adjusted benchmarking hospital quality programs use. The second asks whether a clinical NLP model actually reads the record. The third is an LLM agent built so its output stays reproducible.</aside>
+</section>
+<section id="about" data-transition="fade" style="background:#f7f6f0;color:#263e35;font-family:'DM Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:56px">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;letter-spacing:2px;text-transform:uppercase;color:#b4441f">About</p>
+<h2 style="font-family:'Source Serif 4', Georgia, serif;font-size:72px;font-weight:500;line-height:1.1;width:1500px">A mathematician who ended up in health care data.</h2>
+<p style="font-size:32px;line-height:1.45;color:#5f6c59;width:1400px">BS in pure and computing mathematics at UMass Amherst, MS in data science at UT Austin. I’ve worked in biotech, aviation, state government and a non-profit, and taught Data Science for Healthcare as a TA.</p>
+<div style="display:flex;gap:24px">
+<div style="flex:1;display:flex;flex-direction:column;gap:8px;background:#fbfaf6;border:1px solid #dedfd4;border-radius:16px;padding:32px">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:72px;font-weight:500">3.91</p>
+<p style="font-size:24px;color:#66715f">GPA, MS Data Science</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:8px;background:#fbfaf6;border:1px solid #dedfd4;border-radius:16px;padding:32px">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:72px;font-weight:500">4</p>
+<p style="font-size:24px;color:#66715f">industries: biotech, aviation, government, non-profit</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:8px;background:#fbfaf6;border:1px solid #dedfd4;border-radius:16px;padding:32px">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:72px;font-weight:500">300+</p>
+<p style="font-size:24px;color:#66715f">students supported in health care data science</p>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;color:#66715f">02</p>
+</section>
+<section id="sparcs" data-transition="fade" style="background:#263e35;color:#f7f6f0;font-family:'DM Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:48px">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;letter-spacing:2px;text-transform:uppercase;color:#e5ac87">Project 1 · NY SPARCS discharges, 2023</p>
+<h2 style="font-family:'Source Serif 4', Georgia, serif;font-size:72px;font-weight:500;line-height:1.1;width:1500px">Which hospitals really lose too many sepsis patients?</h2>
+<p style="font-size:32px;line-height:1.45;color:#c9d2c4;width:1400px">Raw death rates punish the hospitals that take the sickest patients. I adjust for who comes through the door, then ask which hospitals do worse than expected.</p>
+<div style="flex:1"></div>
+<div style="display:flex;gap:24px">
+<div style="flex:1;display:flex;flex-direction:column;gap:8px;border-top:2px solid #e5ac87;padding:24px 0 0 0">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:72px;font-weight:500">120,995</p>
+<p style="font-size:24px;color:#c9d2c4">adult sepsis stays</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:8px;border-top:2px solid #e5ac87;padding:24px 0 0 0">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:72px;font-weight:500">180</p>
+<p style="font-size:24px;color:#c9d2c4">New York hospitals</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:8px;border-top:2px solid #e5ac87;padding:24px 0 0 0">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:72px;font-weight:500">0.81</p>
+<p style="font-size:24px;color:#c9d2c4">AUROC, logistic regression</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:8px;border-top:2px solid #e5ac87;padding:24px 0 0 0">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:72px;font-weight:500">46 → 9</p>
+<p style="font-size:24px;color:#c9d2c4">flagged hospitals, textbook vs robust</p>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;color:#acb5a8">03 · github.com/sbhattap/sparcs-sepsis</p>
+<aside>Same idea as observed-to-expected mortality in hospital quality rankings. APR-DRG 720, septicemia. Data is public, de-identified SPARCS inpatient discharges. 46 = Poisson 99.8% limits; 9 = overdispersion-adjusted 95% limits and flagged under all four method variants (7 high, 2 low).</aside>
+</section>
+<section id="pipeline" data-transition="fade" style="background:#f7f6f0;color:#263e35;font-family:'DM Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:56px">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;letter-spacing:2px;text-transform:uppercase;color:#b4441f">Project 1 · Pipeline</p>
+<h2 style="font-family:'Source Serif 4', Georgia, serif;font-size:72px;font-weight:500;line-height:1.1">Seven stages, from raw discharges to a flag.</h2>
+<div style="display:flex;gap:16px">
+<div style="flex:1;display:flex;flex-direction:column;gap:12px;background:#fbfaf6;border:1px solid #dedfd4;border-radius:12px;padding:20px">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;color:#b4441f">01</p>
+<h3 style="font-size:32px;font-weight:600">Ingest</h3>
+<p style="font-size:24px;line-height:1.35;color:#5f6c59">State API, cached as Parquet</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:12px;background:#fbfaf6;border:1px solid #dedfd4;border-radius:12px;padding:20px">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;color:#b4441f">02</p>
+<h3 style="font-size:32px;font-weight:600">Cohort</h3>
+<p style="font-size:24px;line-height:1.35;color:#5f6c59">Adults, DRG 720, counted step by step</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:12px;background:#fbfaf6;border:1px solid #dedfd4;border-radius:12px;padding:20px">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;color:#b4441f">03</p>
+<h3 style="font-size:32px;font-weight:600">Model</h3>
+<p style="font-size:24px;line-height:1.35;color:#5f6c59">P(death) from patient features</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:12px;background:#fbfaf6;border:1px solid #dedfd4;border-radius:12px;padding:20px">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;color:#b4441f">04</p>
+<h3 style="font-size:32px;font-weight:600">Validate</h3>
+<p style="font-size:24px;line-height:1.35;color:#5f6c59">Calibration, Brier, AUROC</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:12px;background:#fbfaf6;border:1px solid #dedfd4;border-radius:12px;padding:20px">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;color:#b4441f">05</p>
+<h3 style="font-size:32px;font-weight:600">Expect</h3>
+<p style="font-size:24px;line-height:1.35;color:#5f6c59">Per hospital: O, E = Σp, O/E</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:12px;background:#fbfaf6;border:1px solid #dedfd4;border-radius:12px;padding:20px">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;color:#b4441f">06</p>
+<h3 style="font-size:32px;font-weight:600">Flag</h3>
+<p style="font-size:24px;line-height:1.35;color:#5f6c59">Funnel plot, Poisson limits</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:12px;background:#fbfaf6;border:1px solid #dedfd4;border-radius:12px;padding:20px">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;color:#b4441f">07</p>
+<h3 style="font-size:32px;font-weight:600">Stress</h3>
+<p style="font-size:24px;line-height:1.35;color:#5f6c59">Sensitivity and fairness checks</p>
+</div>
+</div>
+<p style="font-size:32px;line-height:1.45;color:#5f6c59;width:1400px">Packaged as a Python module: one command runs every stage, with tests on the benchmarking math.</p>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;color:#66715f">04</p>
+</section>
+<section id="decisions" data-transition="fade" style="background:#f7f6f0;color:#263e35;font-family:'DM Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:40px">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;letter-spacing:2px;text-transform:uppercase;color:#b4441f">Project 1 · Decisions</p>
+<h2 style="font-family:'Source Serif 4', Georgia, serif;font-size:72px;font-weight:500;line-height:1.1">Six choices that change the answer.</h2>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px">
+<div style="display:flex;flex-direction:column;gap:12px;background:#fbfaf6;border:1px solid #dedfd4;border-radius:12px;padding:28px">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;color:#b4441f">01</p>
+<h3 style="font-size:32px;font-weight:600">Drop transfers and AMA</h3>
+<p style="font-size:24px;line-height:1.35;color:#5f6c59">Their outcome happens elsewhere. Counting them as survivors rewards hospitals that transfer sick patients.</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:12px;background:#fbfaf6;border:1px solid #dedfd4;border-radius:12px;padding:28px">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;color:#b4441f">02</p>
+<h3 style="font-size:32px;font-weight:600">Only what care can’t change</h3>
+<p style="font-size:24px;line-height:1.35;color:#5f6c59">Stay length and procedures stay out. Severity codes are a grey zone, so an admission-only model runs as the other extreme.</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:12px;background:#fbfaf6;border:1px solid #dedfd4;border-radius:12px;padding:28px">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;color:#b4441f">03</p>
+<h3 style="font-size:32px;font-weight:600">Folds split by hospital</h3>
+<p style="font-size:24px;line-height:1.35;color:#5f6c59">Out-of-fold predictions: no hospital is scored by a model that trained on its own patients.</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:12px;background:#fbfaf6;border:1px solid #dedfd4;border-radius:12px;padding:28px">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;color:#b4441f">04</p>
+<h3 style="font-size:32px;font-weight:600">Calibration over accuracy</h3>
+<p style="font-size:24px;line-height:1.35;color:#5f6c59">About 1 in 8 die. No resampling: expected deaths are a sum of probabilities, so they must be honest.</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:12px;background:#fbfaf6;border:1px solid #dedfd4;border-radius:12px;padding:28px">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;color:#b4441f">05</p>
+<h3 style="font-size:32px;font-weight:600">Funnel plot, not rankings</h3>
+<p style="font-size:24px;line-height:1.35;color:#5f6c59">Small hospitals get wider limits. A league table overreacts to noise in small numbers.</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:12px;background:#fbfaf6;border:1px solid #dedfd4;border-radius:12px;padding:28px">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;color:#b4441f">06</p>
+<h3 style="font-size:32px;font-weight:600">Race out of the model</h3>
+<p style="font-size:24px;line-height:1.35;color:#5f6c59">Used only to check calibration by group, so the adjustment can’t excuse unequal outcomes.</p>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;color:#66715f">05</p>
+<aside>Likely interview questions sit here: missing data (redacted hospital IDs dropped, outcome-unknown discharges dropped), imbalance (12.6% base rate, no resampling), leakage (grouped folds, no care-process features). Model inputs: age group, sex, admission type, ED admission, APR severity of illness, APR risk of mortality. The APR scores are assigned at discharge from all coded diagnoses, so they can absorb complications and coding habits. Kept because admission factors alone give AUROC 0.60. Also dropped two kinds of hospital: mostly-elective (palliative, rehab) and one reporting zero deaths among 100+ cases.</aside>
+</section>
+<section id="code" data-transition="fade" style="background:#f7f6f0;color:#263e35;font-family:'DM Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:48px">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;letter-spacing:2px;text-transform:uppercase;color:#b4441f">Project 1 · In the code</p>
+<h2 style="font-family:'Source Serif 4', Georgia, serif;font-size:72px;font-weight:500;line-height:1.1">One rule, one line, one count.</h2>
+<div style="display:flex;gap:56px;align-items:start">
+<div style="width:1100px;background:#263e35;border-radius:16px;padding:40px">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:26px;line-height:1.6;color:#f7f6f0"><span style="color:#acb5a8"># Transfers out: final outcome unknown here, and counting</span><br><span style="color:#acb5a8"># them as survivors would reward hospitals that transfer</span><br><span style="color:#acb5a8"># sick patients.</span><br>df = df[~df["patient_disposition"].isin(TRANSFERS)]<br>steps.append((<span style="color:#e5ac87">"not transferred to another hospital"</span>, len(df)))<br><br><span style="color:#acb5a8"># Left against medical advice: outcome unknown too.</span><br>df = df[df["patient_disposition"] != LEFT_AMA]<br>steps.append((<span style="color:#e5ac87">"did not leave against medical advice"</span>, len(df)))</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:32px">
+<p style="font-size:28px;line-height:1.45;color:#5f6c59">Every exclusion records how many patients it removed, so the cohort table writes itself and any reviewer can audit it.</p>
+<p style="font-size:28px;line-height:1.45;color:#263e35;border-left:4px solid #df5835;padding:4px 0 4px 24px">Dropping these made prediction harder: most of them survived.</p>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;color:#66715f">06 · src/sparcs/data.py</p>
+</section>
+<section id="results" data-transition="fade" style="background:#f7f6f0;color:#263e35;font-family:'DM Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:48px">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;letter-spacing:2px;text-transform:uppercase;color:#b4441f">Project 1 · Results</p>
+<h2 style="font-family:'Source Serif 4', Georgia, serif;font-size:72px;font-weight:500;line-height:1.1">The ranking holds. Most of the flags don’t.</h2>
+<div style="display:flex;gap:24px">
+<div style="flex:1;display:flex;flex-direction:column;gap:12px;background:#fbfaf6;border:1px solid #dedfd4;border-radius:16px;padding:28px">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:72px;font-weight:500">0.99</p>
+<h3 style="font-size:32px;font-weight:600">Calibration slope</h3>
+<p style="font-size:24px;line-height:1.35;color:#5f6c59">AUROC 0.81. LightGBM, EBM and interactions land within 0.001, so the simple model stays.</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:12px;background:#fbfaf6;border:1px solid #dedfd4;border-radius:16px;padding:28px">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:72px;font-weight:500">4.9</p>
+<h3 style="font-size:32px;font-weight:600">Overdispersion</h3>
+<p style="font-size:24px;line-height:1.35;color:#5f6c59">Hospitals vary far more than chance allows, so plain Poisson limits over-flag.</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:12px;background:#fbfaf6;border:1px solid #dedfd4;border-radius:16px;padding:28px">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:72px;font-weight:500">46 → 9</p>
+<h3 style="font-size:32px;font-weight:600">Robust flags</h3>
+<p style="font-size:24px;line-height:1.35;color:#5f6c59">7 high and 2 low hold under both outcomes and both risk-factor sets.</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:12px;background:#fbfaf6;border:1px solid #dedfd4;border-radius:16px;padding:28px">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:72px;font-weight:500">1.02</p>
+<h3 style="font-size:32px;font-weight:600">Black patients</h3>
+<p style="font-size:24px;line-height:1.35;color:#5f6c59">O/E within the same hospital, vs 1.12 overall. The gap is where they’re treated, not the model.</p>
+</div>
+</div>
+<p style="font-size:32px;line-height:1.45;color:#263e35;width:1500px;border-left:4px solid #df5835;padding:8px 0 8px 28px">Hospital order barely moves across method variants (rank correlation 0.80 to 0.99), but how many hospitals stand out depends heavily on the method.</p>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;color:#66715f">07</p>
+<aside>Flag counts of 180 hospitals: Poisson 99.8%: 46. Overdispersion-adjusted 95%: 29. Adjusted 95% and flagged under all four variants: 9. Adjusted 99.8% under all four: 2. Black patients: odds ratio vs White 1.22 ignoring hospital, 1.02 (0.96 to 1.09) within hospital. These are signals worth a closer look, not verdicts on quality of care.</aside>
+</section>
+<section id="next" data-transition="fade" style="background:#e9eddf;color:#263e35;font-family:'DM Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:48px">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;letter-spacing:2px;text-transform:uppercase;color:#b4441f">Project 1 · Limits and next steps</p>
+<h2 style="font-family:'Source Serif 4', Georgia, serif;font-size:72px;font-weight:500;line-height:1.1">A signal worth a look, not a verdict.</h2>
+<div style="display:flex;flex-direction:column">
+<div style="display:flex;gap:48px;border-top:1px solid #d2d8c8;padding:28px 0">
+<h3 style="font-size:32px;font-weight:600;width:520px">Bayesian shrinkage</h3>
+<p style="flex:1;font-size:28px;line-height:1.4;color:#5f6c59">A random intercept per hospital pulls small hospitals toward the average; compare with the funnel flags.</p>
+</div>
+<div style="display:flex;gap:48px;border-top:1px solid #d2d8c8;padding:28px 0">
+<h3 style="font-size:32px;font-weight:600;width:520px">Stability over time</h3>
+<p style="flex:1;font-size:28px;line-height:1.4;color:#5f6c59">Repeat for 2022: one bad year and a persistent problem look the same.</p>
+</div>
+<div style="display:flex;gap:48px;border-top:1px solid #d2d8c8;padding:28px 0">
+<h3 style="font-size:32px;font-weight:600;width:520px">Beyond in-hospital death</h3>
+<p style="flex:1;font-size:28px;line-height:1.4;color:#5f6c59">30-day mortality needs linked death records; hospice discharge is the stand-in for now.</p>
+</div>
+<div style="display:flex;gap:48px;border-top:1px solid #d2d8c8;border-bottom:1px solid #d2d8c8;padding:28px 0">
+<h3 style="font-size:32px;font-weight:600;width:520px">Coding, not care</h3>
+<p style="flex:1;font-size:28px;line-height:1.4;color:#5f6c59">Mild sepsis ranges from 4% to 38% of a hospital’s cases. Present-on-admission flags would separate coding from care.</p>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;color:#66715f">08 · <a href="https://github.com/sbhattap/sparcs-sepsis">github.com/sbhattap/sparcs-sepsis</a></p>
+<aside>Other next steps from the README: link CMS hospital type to restrict to general acute-care hospitals; volume vs outcome and cost per case with the same risk adjustment.</aside>
+</section>
+<section id="emrqa" data-transition="fade" style="background:#263e35;color:#f7f6f0;font-family:'DM Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:48px">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;letter-spacing:2px;text-transform:uppercase;color:#e5ac87">Project 2 · emrQA-msquad · clinical question answering</p>
+<h2 style="font-family:'Source Serif 4', Georgia, serif;font-size:72px;font-weight:500;line-height:1.1;width:1500px">Is the model reading the chart, or the dataset’s habits?</h2>
+<p style="font-size:32px;line-height:1.45;color:#c9d2c4;width:1400px">emrQA is built from question templates over real discharge notes, so a model can score well by learning the templates. I fine-tuned ELECTRA-small and took both the model and the data apart.</p>
+<div style="flex:1"></div>
+<table style="width:1100px;font-size:32px;color:#f7f6f0">
+<tr><th style="width:50%;text-align:left">Input the model sees</th><th style="width:25%;text-align:right">Exact match</th><th style="width:25%;text-align:right">F1</th></tr>
+<tr><td>Question + passage</td><td style="text-align:right">90.25</td><td style="text-align:right">92.65</td></tr>
+<tr><td>Passage only</td><td style="text-align:right">8.59</td><td style="text-align:right">18.26</td></tr>
+<tr><td>Question only</td><td style="text-align:right">0.05</td><td style="text-align:right">1.20</td></tr>
+</table>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;color:#acb5a8">09 · <a href="https://app.notion.com/p/Are-QA-Models-Reasoning-or-Exploiting-Artifacts-An-Analysis-of-the-emrQA-msquad-Dataset-3d38cec51dc780cfaa44dc0407ad8cd4">Read the paper</a> · Neither input alone gets far</p>
+<aside>Ablations follow Kaushik and Lipton (2018). Question-only: context masked from attention, or shuffled filler. Passage-only: the question replaced by “Find the answer in the passage”. Three seeds per configuration.</aside>
+</section>
+<section id="diagnose" data-transition="fade" style="background:#f7f6f0;color:#263e35;font-family:'DM Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:48px">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;letter-spacing:2px;text-transform:uppercase;color:#b4441f">Project 2 · Diagnosis</p>
+<h2 style="font-family:'Source Serif 4', Georgia, serif;font-size:72px;font-weight:500;line-height:1.1">Most failures trace back to the labels.</h2>
+<div style="display:flex;gap:56px">
+<div style="width:640px;display:flex;flex-direction:column;gap:24px">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:120px;font-weight:500;line-height:1">70.5%</p>
+<p style="font-size:28px;line-height:1.4;color:#5f6c59">of 3,248 failed predictions show likely annotation problems.</p>
+<div style="display:flex;flex-direction:column;gap:8px;background:#e9eddf;border-radius:12px;padding:28px">
+<p style="font-size:24px;line-height:1.4"><b>Q:</b> Has the patient ever been on Zantac?</p>
+<p style="font-size:24px;line-height:1.4"><b>Gold answer:</b> a list of four medications, not a yes or no.</p>
+</div>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:16px">
+<div style="display:flex;flex-direction:column;gap:8px;background:#fbfaf6;border:1px solid #dedfd4;border-radius:12px;padding:28px">
+<h3 style="font-size:32px;font-weight:600">Rule-based checks</h3>
+<p style="font-size:24px;line-height:1.4;color:#5f6c59">14 heuristics: span length, question-type mismatch, boundary errors, vague templates.</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:8px;background:#fbfaf6;border:1px solid #dedfd4;border-radius:12px;padding:28px">
+<h3 style="font-size:32px;font-weight:600">Dataset cartography</h3>
+<p style="font-size:24px;line-height:1.4;color:#5f6c59">Per-example confidence and variability across epochs: easy, hard and ambiguous examples.</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:8px;background:#fbfaf6;border:1px solid #dedfd4;border-radius:12px;padding:28px">
+<h3 style="font-size:32px;font-weight:600">Embedding clusters</h3>
+<p style="font-size:24px;line-height:1.4;color:#5f6c59">HDBSCAN on [CLS] + answer-span embeddings. The ambiguous region overlaps the noise cluster.</p>
+</div>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;color:#66715f">10</p>
+</section>
+<section id="outcome" data-transition="fade" style="background:#f7f6f0;color:#263e35;font-family:'DM Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:48px">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;letter-spacing:2px;text-transform:uppercase;color:#b4441f">Project 2 · Noise-aware training</p>
+<h2 style="font-family:'Source Serif 4', Georgia, serif;font-size:72px;font-weight:500;line-height:1.1">Same accuracy, different mistakes.</h2>
+<p style="font-size:32px;line-height:1.45;color:#5f6c59;width:1500px">Rule-based filtering plus loss weights from training dynamics, tuned by Bayesian search. EM and F1 did not move. What the model gets wrong did.</p>
+<table style="width:1400px;font-size:32px;color:#263e35">
+<tr><th style="width:40%;text-align:left">Error pattern</th><th style="width:20%;text-align:right">Baseline</th><th style="width:20%;text-align:right">Final</th><th style="width:20%;text-align:right">Change</th></tr>
+<tr><td>Under-extraction</td><td style="text-align:right">2,167</td><td style="text-align:right">1,188</td><td style="text-align:right;color:#2f6128">−45%</td></tr>
+<tr><td>Position bias</td><td style="text-align:right">963</td><td style="text-align:right">646</td><td style="text-align:right;color:#2f6128">−33%</td></tr>
+<tr><td>Entity confusion</td><td style="text-align:right">1,121</td><td style="text-align:right">1,355</td><td style="text-align:right;color:#a3432a">+21%</td></tr>
+<tr><td>Boundary failure</td><td style="text-align:right">148</td><td style="text-align:right">163</td><td style="text-align:right;color:#a3432a">+10%</td></tr>
+</table>
+<p style="font-size:28px;line-height:1.4;color:#263e35;width:1500px;border-left:4px solid #df5835;padding:8px 0 8px 28px">Next: entity disambiguation, picking the right drug from a list, is now the main error to fix.</p>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;color:#66715f">11 · <a href="https://app.notion.com/p/Are-QA-Models-Reasoning-or-Exploiting-Artifacts-An-Analysis-of-the-emrQA-msquad-Dataset-3d38cec51dc780cfaa44dc0407ad8cd4">Read the paper</a></p>
+<aside>Also tried variability-proportional label smoothing (epsilon = alpha × sigma). Loss weight w = 1 + beta × sigma. The error heuristics were refined between the two runs, so counts are close to, not exactly, like-for-like.</aside>
+</section>
+<section id="music" data-transition="fade" style="background:#263e35;color:#f7f6f0;font-family:'DM Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:48px">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;letter-spacing:2px;text-transform:uppercase;color:#e5ac87">Project 3 · Agentic music recommender</p>
+<h2 style="font-family:'Source Serif 4', Georgia, serif;font-size:72px;font-weight:500;line-height:1.1;width:1500px">Let the LLM understand the request, not rank the results.</h2>
+<p style="font-size:32px;line-height:1.45;color:#c9d2c4;width:1450px">A rule-based recommender only took structured profiles. I wrapped it in an agent loop that reads free text, chooses how to search, checks its own results and explains them. The final ranking stays deterministic.</p>
+<div style="flex:1"></div>
+<div style="display:flex;gap:16px;align-items:center">
+<p style="flex:1;font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:28px;text-align:center;border:2px solid #e5ac87;border-radius:12px;padding:20px">Plan</p>
+<p style="font-size:32px;color:#e5ac87">→</p>
+<p style="flex:1;font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:28px;text-align:center;border:2px solid #e5ac87;border-radius:12px;padding:20px">Retrieve</p>
+<p style="font-size:32px;color:#e5ac87">→</p>
+<p style="flex:1;font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:28px;text-align:center;border:2px solid #e5ac87;border-radius:12px;padding:20px">Check</p>
+<p style="font-size:32px;color:#e5ac87">→</p>
+<p style="flex:1;font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:28px;text-align:center;background:#e5ac87;color:#263e35;border-radius:12px;padding:20px">Rank</p>
+<p style="font-size:32px;color:#e5ac87">→</p>
+<p style="flex:1;font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:28px;text-align:center;border:2px solid #e5ac87;border-radius:12px;padding:20px">Explain</p>
+</div>
+<p style="font-size:24px;color:#c9d2c4">The LLM plans, checks and explains. Ranking (filled) is the original 7-signal scorer, with no LLM in it.</p>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;color:#acb5a8">12 · <a href="https://github.com/sbhattap/applied-ai-music-recommender-system">github.com/sbhattap/applied-ai-music-recommender-system</a></p>
+<aside>Python, Gemini API, Streamlit UI and a CLI.</aside>
+</section>
+<section id="agent" data-transition="fade" style="background:#f7f6f0;color:#263e35;font-family:'DM Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:48px">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;letter-spacing:2px;text-transform:uppercase;color:#b4441f">Project 3 · Decisions</p>
+<h2 style="font-family:'Source Serif 4', Georgia, serif;font-size:72px;font-weight:500;line-height:1.1">An agent you can debug.</h2>
+<div style="display:flex;flex-direction:column">
+<div style="display:flex;gap:48px;border-top:1px solid #d2d8c8;padding:24px 0">
+<h3 style="font-size:32px;font-weight:600;width:520px">Deterministic final say</h3>
+<p style="flex:1;font-size:28px;line-height:1.4;color:#5f6c59">The rule-based scorer ranks every result, so the same request gives the same list and tests can pin it down.</p>
+</div>
+<div style="display:flex;gap:48px;border-top:1px solid #d2d8c8;padding:24px 0">
+<h3 style="font-size:32px;font-weight:600;width:520px">Three retrieval modes</h3>
+<p style="flex:1;font-size:28px;line-height:1.4;color:#5f6c59">Structured filters, semantic search or a hybrid of both; the agent picks one per request.</p>
+</div>
+<div style="display:flex;gap:48px;border-top:1px solid #d2d8c8;padding:24px 0">
+<h3 style="font-size:32px;font-weight:600;width:520px">A check, not blind trust</h3>
+<p style="flex:1;font-size:28px;line-height:1.4;color:#5f6c59">Confidence plus flags. Ask for a fake genre and it returns nothing at confidence 0.00, rather than a guess.</p>
+</div>
+<div style="display:flex;gap:48px;border-top:1px solid #d2d8c8;border-bottom:1px solid #d2d8c8;padding:24px 0">
+<h3 style="font-size:32px;font-weight:600;width:520px">Built to fail safely</h3>
+<p style="flex:1;font-size:28px;line-height:1.4;color:#5f6c59">Capped retry loop, every LLM call logged, a templated fallback, and 24 offline tests with mocked LLM calls.</p>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;color:#66715f">13</p>
+<aside>No vector database: the catalog is small, so simpler retrieval is easier to explain and maintain.</aside>
+</section>
+<section id="experience" data-transition="fade" style="background:#f7f6f0;color:#263e35;font-family:'DM Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:40px">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;letter-spacing:2px;text-transform:uppercase;color:#b4441f">Experience</p>
+<h2 style="font-family:'Source Serif 4', Georgia, serif;font-size:72px;font-weight:500;line-height:1.1">Pipelines people actually used.</h2>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px">
+<div style="grid-column:span 2;display:flex;flex-direction:column;gap:8px;background:#fbfaf6;border:1px solid #dedfd4;border-radius:12px;padding:28px">
+<h3 style="font-size:32px;font-weight:600">Data Engineer Intern</h3>
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;color:#b4441f">Northrop Grumman · 2025 · SQL</p>
+<ul style="font-size:24px;line-height:1.4;color:#5f6c59">
+<li>Built and debugged SQL pipelines, stored procedures and dbt models, that compute supplier-quality KPIs.</li>
+<li>Replaced manual quarterly KPI prep, saving 30+ hours every quarter.</li>
+<li>Fed SQL Server manufacturing metrics into an Azure LangChain pipeline that writes the weekly operations report managers use to assign repairs and technicians.</li>
+</ul>
+</div>
+<div style="display:flex;flex-direction:column;gap:8px;background:#fbfaf6;border:1px solid #dedfd4;border-radius:12px;padding:28px">
+<h3 style="font-size:32px;font-weight:600">Data Science Intern</h3>
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;color:#b4441f">Genentech · 2025</p>
+<p style="font-size:24px;line-height:1.4;color:#5f6c59">OCR plus LLM prompting that turns scientific documents into structured tables for contamination monitoring, replacing manual transcription.</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:8px;background:#fbfaf6;border:1px solid #dedfd4;border-radius:12px;padding:28px">
+<h3 style="font-size:32px;font-weight:600">Data Science Intern</h3>
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;color:#b4441f">State of Delaware · 2024</p>
+<p style="font-size:24px;line-height:1.4;color:#5f6c59">Triage model for 100K+ permit applications; SQL and DAX checks on 120K+ water-data rows.</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:8px;background:#fbfaf6;border:1px solid #dedfd4;border-radius:12px;padding:28px">
+<h3 style="font-size:32px;font-weight:600">Data Analyst</h3>
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;color:#b4441f">Capacity Catalyst · 2026</p>
+<p style="font-size:24px;line-height:1.4;color:#5f6c59">End-to-end ETL to public dashboards; moved the data layer to Postgres on Supabase.</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:8px;background:#fbfaf6;border:1px solid #dedfd4;border-radius:12px;padding:28px">
+<h3 style="font-size:32px;font-weight:600">Teaching</h3>
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;color:#b4441f">UT Austin · CodePath</p>
+<p style="font-size:24px;line-height:1.4;color:#5f6c59">TA for Data Science for Healthcare (300+ students); led RAG and agent sessions (100+).</p>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;color:#66715f">14</p>
+</section>
+<section id="close" data-transition="fade" style="background:#263e35;color:#f7f6f0;font-family:'DM Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;gap:48px">
+<h2 style="font-family:'Source Serif 4', Georgia, serif;font-size:120px;font-weight:500;line-height:1.05">Thank you.</h2>
+<div style="display:flex;gap:24px">
+<div style="flex:1;display:flex;flex-direction:column;gap:16px">
+<img src="img/penguin-sunset.jpg" alt="An emperor penguin silhouetted against a low sun over Antarctic ice" style="width:820px;height:500px;object-fit:cover;border-radius:16px">
+<p style="font-size:24px;color:#acb5a8">Emperor penguin at sunset, Antarctica · Hannes Grobe/AWI, CC BY 3.0</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:16px">
+<img src="img/jokulsarlon.jpg" alt="Icebergs on Jökulsárlón glacial lagoon at sunset, with snowy mountains reflected in the water" style="width:820px;height:500px;object-fit:cover;border-radius:16px">
+<p style="font-size:24px;color:#acb5a8">Jökulsárlón glacial lagoon, Iceland · Kenny Muir, CC BY 2.0</p>
+</div>
+</div>
+</section>
+</div>
+<div id="nav"><a href="/projects.html">sbhatta.org</a><button id="prev" aria-label="Previous slide">&larr;</button><span id="count"></span><button id="next" aria-label="Next slide">&rarr;</button></div>
+<script>
+const stage = document.getElementById('stage');
+const slides = [...stage.querySelectorAll('section')];
+let i = 0;
+function show(n) {
+  i = Math.max(0, Math.min(slides.length - 1, n));
+  slides.forEach((s, k) => s.classList.toggle('on', k === i));
+  document.getElementById('count').textContent = (i + 1) + ' / ' + slides.length;
+  history.replaceState(null, '', '#' + (i + 1));
+}
+function fit() {
+  const stack = innerWidth < 760 || innerHeight > innerWidth * 1.1;
+  document.body.classList.toggle('stack', stack);
+  if (stack) {
+    const w = document.documentElement.clientWidth;  // excludes the scrollbar
+    const s = w / 1920;
+    slides.forEach(sec => {
+      if (!sec.parentElement.classList.contains('wrap')) {
+        const wrap = document.createElement('div'); wrap.className = 'wrap';
+        sec.before(wrap); wrap.append(sec);
+      }
+      sec.parentElement.style.width = w + 'px';
+      sec.parentElement.style.height = (1080 * s) + 'px';
+      sec.style.transform = 'scale(' + s + ')';
+    });
+  } else {
+    document.querySelectorAll('.wrap').forEach(w => { w.replaceWith(w.firstChild); });
+    slides.forEach(sec => sec.style.transform = '');
+    const s = Math.min(innerWidth / 1920, innerHeight / 1080);
+    stage.style.transform = 'translate(-50%, -50%) scale(' + s + ')';
+  }
+}
+document.getElementById('prev').onclick = () => show(i - 1);
+document.getElementById('next').onclick = () => show(i + 1);
+addEventListener('keydown', e => {
+  if (['ArrowRight', 'PageDown', ' '].includes(e.key)) { e.preventDefault(); show(i + 1); }
+  if (['ArrowLeft', 'PageUp'].includes(e.key)) { e.preventDefault(); show(i - 1); }
+  if (e.key === 'Home') show(0);
+  if (e.key === 'End') show(slides.length - 1);
+});
+stage.addEventListener('click', e => {
+  if (document.body.classList.contains('stack') || e.target.closest('a')) return;
+  show(e.clientX > innerWidth / 2 ? i + 1 : i - 1);
+});
+let x0 = null;
+addEventListener('touchstart', e => x0 = e.touches[0].clientX, { passive: true });
+addEventListener('touchend', e => {
+  if (x0 === null || document.body.classList.contains('stack')) return;
+  const dx = e.changedTouches[0].clientX - x0;
+  if (Math.abs(dx) > 40) show(dx < 0 ? i + 1 : i - 1);
+  x0 = null;
+});
+document.querySelectorAll('a[href^="http"]').forEach(a => { a.target = '_blank'; a.rel = 'noopener'; });
+addEventListener('resize', fit);
+fit();
+show((parseInt(location.hash.slice(1)) || 1) - 1);
+</script>
+</body>
+</html>

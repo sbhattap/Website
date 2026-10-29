@@ -1,0 +1,24 @@
+<section id="agent" data-transition="fade" style="background:#f7f6f0;color:#263e35;font-family:'DM Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:48px">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;letter-spacing:2px;text-transform:uppercase;color:#b4441f">Project 3 · Decisions</p>
+<h2 style="font-family:'Source Serif 4', Georgia, serif;font-size:72px;font-weight:500;line-height:1.1">An agent you can debug.</h2>
+<div style="display:flex;flex-direction:column">
+<div style="display:flex;gap:48px;border-top:1px solid #d2d8c8;padding:24px 0">
+<h3 style="font-size:32px;font-weight:600;width:520px">Deterministic final say</h3>
+<p style="flex:1;font-size:28px;line-height:1.4;color:#5f6c59">The rule-based scorer ranks every result, so the same request gives the same list and tests can pin it down.</p>
+</div>
+<div style="display:flex;gap:48px;border-top:1px solid #d2d8c8;padding:24px 0">
+<h3 style="font-size:32px;font-weight:600;width:520px">Three retrieval modes</h3>
+<p style="flex:1;font-size:28px;line-height:1.4;color:#5f6c59">Structured filters, semantic search or a hybrid of both; the agent picks one per request.</p>
+</div>
+<div style="display:flex;gap:48px;border-top:1px solid #d2d8c8;padding:24px 0">
+<h3 style="font-size:32px;font-weight:600;width:520px">A check, not blind trust</h3>
+<p style="flex:1;font-size:28px;line-height:1.4;color:#5f6c59">Confidence plus flags. Ask for a fake genre and it returns nothing at confidence 0.00, rather than a guess.</p>
+</div>
+<div style="display:flex;gap:48px;border-top:1px solid #d2d8c8;border-bottom:1px solid #d2d8c8;padding:24px 0">
+<h3 style="font-size:32px;font-weight:600;width:520px">Built to fail safely</h3>
+<p style="flex:1;font-size:28px;line-height:1.4;color:#5f6c59">Capped retry loop, every LLM call logged, a templated fallback, and 24 offline tests with mocked LLM calls.</p>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;color:#66715f">13</p>
+<aside>No vector database: the catalog is small, so simpler retrieval is easier to explain and maintain.</aside>
+</section>
