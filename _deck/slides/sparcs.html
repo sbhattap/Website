@@ -1,7 +1,7 @@
-<section id="sparcs" data-transition="fade" style="background:#263e35;color:#f7f6f0;font-family:'DM Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:48px">
+<section id="sparcs" style="background:#263e35;color:#f7f6f0;font-family:'DM Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:48px">
 <p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;letter-spacing:2px;text-transform:uppercase;color:#e5ac87">Project 1 · NY SPARCS discharges, 2023</p>
-<h2 style="font-family:'Source Serif 4', Georgia, serif;font-size:72px;font-weight:500;line-height:1.1;width:1500px">Which hospitals really lose too many sepsis patients?</h2>
-<p style="font-size:32px;line-height:1.45;color:#c9d2c4;width:1400px">Raw death rates punish the hospitals that take the sickest patients. I adjust for who comes through the door, then ask which hospitals do worse than expected.</p>
+<h2 style="font-family:'Source Serif 4', Georgia, serif;font-size:72px;font-weight:500;line-height:1.1;width:1500px">Which hospitals lose more sepsis patients than they should?</h2>
+<p style="font-size:32px;line-height:1.45;color:#c9d2c4;width:1400px">Raw death rates punish hospitals that treat the sickest patients. So I compare each hospital with its own expected deaths.</p>
 <div style="flex:1"></div>
 <div style="display:flex;gap:24px">
 <div style="flex:1;display:flex;flex-direction:column;gap:8px;border-top:2px solid #e5ac87;padding:24px 0 0 0">
@@ -14,13 +14,13 @@
 </div>
 <div style="flex:1;display:flex;flex-direction:column;gap:8px;border-top:2px solid #e5ac87;padding:24px 0 0 0">
 <p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:72px;font-weight:500">0.81</p>
-<p style="font-size:24px;color:#c9d2c4">AUROC, logistic regression</p>
+<p style="font-size:24px;color:#c9d2c4">AUROC, calibration slope 0.99</p>
 </div>
 <div style="flex:1;display:flex;flex-direction:column;gap:8px;border-top:2px solid #e5ac87;padding:24px 0 0 0">
-<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:72px;font-weight:500">46 → 9</p>
-<p style="font-size:24px;color:#c9d2c4">flagged hospitals, textbook vs robust</p>
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:72px;font-weight:500">9</p>
+<p style="font-size:24px;color:#c9d2c4">hospitals robustly off expected</p>
 </div>
 </div>
-<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;color:#acb5a8">03 · github.com/sbhattap/sparcs-sepsis</p>
-<aside>Same idea as observed-to-expected mortality in hospital quality rankings. APR-DRG 720, septicemia. Data is public, de-identified SPARCS inpatient discharges. 46 = Poisson 99.8% limits; 9 = overdispersion-adjusted 95% limits and flagged under all four method variants (7 high, 2 low).</aside>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;color:#acb5a8">02 · <a href="https://github.com/sbhattap/sparcs-sepsis">github.com/sbhattap/sparcs-sepsis</a></p>
+<aside>APR-DRG 720, septicemia. Public, de-identified SPARCS inpatient discharges.</aside>
 </section>

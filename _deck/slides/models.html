@@ -1,0 +1,15 @@
+<section id="models" style="background:#f7f6f0;color:#263e35;font-family:'DM Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:40px">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;letter-spacing:2px;text-transform:uppercase;color:#b4441f">Project 1 · Model selection</p>
+<h2 style="font-family:'Source Serif 4', Georgia, serif;font-size:72px;font-weight:500;line-height:1.1">Flexible models didn’t earn their complexity.</h2>
+<table style="width:1400px;font-size:32px;color:#263e35">
+<tr><th style="width:40%;text-align:left">Model</th><th style="width:20%;text-align:right">AUROC</th><th style="width:20%;text-align:right">Brier</th><th style="width:20%;text-align:right">Calib. slope</th></tr>
+<tr style="background:#e9eddf"><td><b>Logistic regression (chosen)</b></td><td style="text-align:right">0.808</td><td style="text-align:right">0.0939</td><td style="text-align:right">0.99</td></tr>
+<tr><td>LR + interactions</td><td style="text-align:right">0.809</td><td style="text-align:right">0.0938</td><td style="text-align:right">0.99</td></tr>
+<tr><td>EBM</td><td style="text-align:right">0.809</td><td style="text-align:right">0.0938</td><td style="text-align:right">0.98</td></tr>
+<tr><td>LightGBM</td><td style="text-align:right">0.808</td><td style="text-align:right">0.0939</td><td style="text-align:right">0.97</td></tr>
+<tr><td>LR, L1 penalty</td><td style="text-align:right">0.806</td><td style="text-align:right">0.0940</td><td style="text-align:right">1.06</td></tr>
+</table>
+<p style="font-size:28px;line-height:1.4;width:1450px;border-left:4px solid #df5835;padding:4px 0 4px 24px">Bootstrapping hospitals, the best gain is under 0.001 AUROC. Logistic regression keeps calibrated risks and odds ratios anyone can read.</p>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;color:#66715f">04 · Out-of-fold, folds split by hospital · notebooks/modeling_lab.ipynb</p>
+<aside>L1 at C=0.01 shown; at C=0.001 AUROC drops to 0.789. Bootstrap 95% CIs of the difference from logistic regression: EBM and interactions +0.0001 to +0.0010; LightGBM −0.0016 to +0.0005.</aside>
+</section>

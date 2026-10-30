@@ -1,0 +1,28 @@
+<section id="how" style="background:#f7f6f0;color:#263e35;font-family:'DM Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:40px">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;letter-spacing:2px;text-transform:uppercase;color:#b4441f">Project 1 · Method</p>
+<h2 style="font-family:'Source Serif 4', Georgia, serif;font-size:72px;font-weight:500;line-height:1.1">Observed vs expected, hospital by hospital.</h2>
+<div style="display:flex;gap:16px;align-items:center">
+<div style="flex:1;display:flex;flex-direction:column;gap:8px;background:#fbfaf6;border:1px solid #dedfd4;border-radius:12px;padding:28px">
+<h3 style="font-size:32px;font-weight:600">Patient risk</h3>
+<p style="font-size:24px;line-height:1.35;color:#5f6c59">p = P(death) from age, admission and severity</p>
+</div>
+<p style="font-size:44px;color:#b4441f">→</p>
+<div style="flex:1;display:flex;flex-direction:column;gap:8px;background:#fbfaf6;border:1px solid #dedfd4;border-radius:12px;padding:28px">
+<h3 style="font-size:32px;font-weight:600">Expected deaths</h3>
+<p style="font-size:24px;line-height:1.35;color:#5f6c59">E = Σ p over each hospital’s patients</p>
+</div>
+<p style="font-size:44px;color:#b4441f">→</p>
+<div style="flex:1;display:flex;flex-direction:column;gap:8px;background:#263e35;border-radius:12px;padding:28px">
+<h3 style="font-size:32px;font-weight:600;color:#f7f6f0">O/E ratio</h3>
+<p style="font-size:24px;line-height:1.35;color:#c9d2c4">Above 1: more deaths than its patients explain</p>
+</div>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px 48px">
+<p style="font-size:28px;line-height:1.4;border-left:4px solid #df5835;padding:4px 0 4px 20px"><b>Outcome unknown, dropped:</b> transfers out and patients who left against advice.</p>
+<p style="font-size:28px;line-height:1.4;border-left:4px solid #df5835;padding:4px 0 4px 20px"><b>Only what care can’t change:</b> stay length and procedures stay out.</p>
+<p style="font-size:28px;line-height:1.4;border-left:4px solid #df5835;padding:4px 0 4px 20px"><b>Folds split by hospital:</b> no hospital scored by a model that saw it.</p>
+<p style="font-size:28px;line-height:1.4;border-left:4px solid #df5835;padding:4px 0 4px 20px"><b>No resampling:</b> 1 in 8 die, and E needs calibrated risks.</p>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;color:#66715f">03</p>
+<aside>Inputs: age group, sex, admission type, ED admission, APR severity of illness, APR risk of mortality. Hospital and race are never features. The APR scores are coded at discharge, so an admission-only model is run as the other extreme.</aside>
+</section>
